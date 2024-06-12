@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import static com.learnspring.userdetailsapi.common.ExcelUtil.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -39,7 +40,7 @@ public class BenchProfilesExcelReaderService {
                         user.setContactNumber(getStringCellValue(row, 16));
                         user.setEmailId(getStringCellValue(row, 17));
                         user.setRate(getIntegerCellValue(row, 18));
-                        user.setOriginalDob(getDateCellValue(row, 19));
+                        user.setOriginalDob(LocalDate.from(getDateCellValue(row, 19)));
                         user.setMarketingDob(getDateCellValue(row, 20));
                         user.setWhatsappNumber(getStringCellValue(row, 21));
                         user.setMarketingStartDate(getDateCellValue(row, 22));

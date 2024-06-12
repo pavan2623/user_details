@@ -1,6 +1,7 @@
 package com.learnspring.userdetailsapi.Interviews.model;
+
 import jakarta.persistence.*;
-        import lombok.AllArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -8,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "interviews")
@@ -21,29 +23,50 @@ public class interviewInfo {
     @Column(name = "INTERVIEW_ID")
     private long id;
 
-    @Column(name = "CANDIDATE_NAME")
-    private String candidateName;
+    @Column(name = "RECRUITER_NAME")
+    private String recruiterName;
 
-    @Column(name = "POSITION")
-    private String position;
+    @Column(name = "ROUND")
+    private String round;
 
     @Column(name = "INTERVIEW_DATE")
     private LocalDate interviewDate;
 
-    @Column(name = "STATUS")
-    private String status;
+    @Column(name = "TIME")
+    private String time;
 
-    @Column(name = "INTERVIEWER_NAME")
-    private String interviewerName;
+    @Column(name = "MODE")
+    private String mode;
+
+    @Column(name = "CONSULTANT_NAME")
+    private String consultantName;
+
+    @Column(name = "OWN_SUPPORT")
+    private String ownSupport;
+
+    @Column(name = "TECHNOLOGY")
+    private String technology;
+
+    @Column(name = "JOB_TITLE")
+    private String jobTitle;
+
+    @Column(name = "CLIENT_TYPE")
+    private String clientType;
+
+    @Column(name = "CLIENT_NAME")
+    private String clientName;
 
     @Column(name = "LOCATION")
     private String location;
 
+    @Column(name = "RATE")
+    private String rate;
+
+    @Column(name = "VENDOR")
+    private String vendor;
+
     @Column(name = "FEEDBACK")
     private String feedback;
-
-    @Column(name = "RATING")
-    private Integer rating;
 
     @Column(name = "COMMENTS")
     private String comments;
@@ -54,4 +77,3 @@ public class interviewInfo {
     @UpdateTimestamp
     private LocalDateTime lastUpdated;
 }
-
